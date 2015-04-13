@@ -22,15 +22,31 @@ Or install it yourself as:
 
 After doing:
 
-    require 'active_nothing'
+```ruby
+require 'active_nothing'
+```
 
 You now have an access to inverse conditional flow like:
 
-    [true, false, nil, Object, 0, 1, "", [1, 2, 3], {}].each do |value|
-      value
-        .if_true  { p "#{value} is truthy" }
-        .if_false { p "#{value} is falsey" }
-    end
+```ruby
+[true, false, nil, Object, 0, 1, "", [1, 2, 3], {}].each do |value|
+  value
+    .if_true  { p "#{value} is truthy" }
+    .if_false { p "#{value} is falsey" }
+end
+
+# Outputs:
+"true is truthy"
+"false is falsey"
+" is falsey"
+"Object is truthy"
+"0 is truthy"
+"1 is truthy"
+" is truthy"
+"[1, 2, 3] is truthy"
+"{} is truthy"
+[true, false, nil, Object, 0, 1, "", [1, 2, 3], {}]
+```
 
 You can use it as you wish.
 
